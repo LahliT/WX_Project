@@ -1,0 +1,8 @@
+<!--pages/login/login.wxml-->
+<!--登录页面，提供Input控件接受用户的姓名和密码，点击登录按钮，绑定commit函数-->
+<input type="text" placeholder="请输入姓名" bindinput="getname"/>
+<input type="password" placeholder="请输入密码" bindinput="getpwd"/>
+<button bindtap="commit" type="primary">登录</button>
+<!--提示没有账号的用户，点击注册按钮，绑定log1函数，跳转到注册页面log-->
+<view class="note">还没有账号？点击注册</view>
+<button bindtap="log1" type="primary">注册</button>

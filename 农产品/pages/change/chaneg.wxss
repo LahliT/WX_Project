@@ -1,0 +1,32 @@
+/* pages/change/chaneg.wxss */
+.title{
+  display: block;
+  font-size: 40px;
+  margin-top: 180rpx;
+  line-height: 40px;
+  text-align: center;
+}
+.guide{
+  padding-left: 10px;
+  font-size: 20px;
+}
+
+input{
+  text-align: center;
+}
+.iinput{
+  margin: 20px auto;
+  display: flex;
+  border: 1px black solid;
+  border-radius: 5px;
+  height: 40px;
+  line-height: 40px;
+  padding-left: 10px;
+  width: 250px;
+  text-align: center;
+}
+button{
+  width: 150px;
+  height: 40px;
+  margin: 30px auto;
+}

@@ -1,0 +1,5 @@
+<!--pages/log/log.wxml登录功能的注册界面，提供注册按钮，绑定commit函数-->
+<input bindinput="getname" placeholder="请输入用户名"/>
+<input bindinput="getlocal" placeholder="请输入农田地址" />
+<input bindinput="getpwd" placeholder="请输入密码" />
+<button bindtap="commit" type="primary">注册</button>

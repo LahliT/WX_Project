@@ -1,0 +1,37 @@
+<!--pages/check/check.wxml-->
+<!--pages/pre_select/pre_select.wxml-->
+<!--功能1：显示该用户登记的所有农产品，点击某个农产品会跳转到change页面，显示该农产品的具体信息-->
+<!--功能2：输入要筛选的农产品名称，点击上方搜索栏，会跳转到selectresult页面，显示结果-->
+<!-- 顶部搜索栏 -->
+<view class="total">
+<input class="SSearch" type="text" placeholder="请输入农产品名称" bindinput="getname"/>
+<button bindtap="search">搜索</button>
+</view>
+
+<!-- 搜索框下面的头部标签栏 -->
+<view class="topfiled">
+  <view class="display">序号</view>
+  <view class="display">农产品名称</view>
+  <view class="display">状态</view>
+  <view class="display">个数(个)/重量(kg)</view>
+  <view class="display">记录时间</view>
+
+<!-- 数据展示栏 -->
+</view>
+<view class="data" >
+<!--遍历该用户登录的所有农产品信息-->
+        <block wx:for="{{goods_inList}}" wx:key="idx" wx:for-index="idx" >
+            <view class="dataItem">
+                <view class="temp">
+                <!--用data数据集绑定，实现点击该view模块可以将该模块的数据给后端，再将数据渲染到change页面-->
+                    <view class="goods-meta"  bindtap="jump" data-goodsInName="{{item.productname}}" data-goodsState="{{item.state}}" data-goodsNum="{{item.num}}" data-goodsDate="{{item.date}}" data-goodsId="{{item._id}}">
+                        <view class="display">{{idx + 1}}</view>
+                        <view  class="display">{{item.productname}}</view>
+                        <view  class="display">{{item.state}}</view>
+                        <view class="display">{{item.num}}</view>
+                        <view class="display">{{item.date}}</view>
+                    </view>
+                </view>
+            </view>
+        </block>
+      </view>

@@ -1,0 +1,25 @@
+<!--pages/selectResult/selectResult.wxml-->
+<!--功能：输入要筛选的农产品名称，点击上方搜索栏-->
+<!-- 搜索框下面的头部标签栏 -->
+<view class="topfiled">
+  <view class="display">序号</view>
+  <view class="display">状态</view>
+  <view class="display">个数(个)/重量(kg)</view>
+  <view class="display">记录时间</view>
+
+<!-- 数据展示栏 -->
+</view>
+<view class="data" >
+        <block wx:for="{{goods_inList}}" wx:key="idx" wx:for-index="idx" >
+            <view class="dataItem">
+                <view class="temp">
+                    <view class="goods-meta"  data-goodsInType="{{item.state}}" data-goodsInUnit="{{item.num}} " data-goodsInSpecs="{{item.date}}" >
+                        <view class="display">{{idx + 1}}</view>
+                        <view class="display">{{item.state}}</view>
+                        <view class="display">{{item.num}}</view>
+                        <view class="display">{{item.date}}</view>
+                    </view>
+                </view>
+            </view>
+        </block>
+      </view>

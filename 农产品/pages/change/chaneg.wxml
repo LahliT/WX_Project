@@ -1,0 +1,12 @@
+<!--pages/change/chaneg.wxml-->
+<!--功能：将某条农产品的具体信息渲染，提供删除按钮，绑定commit函数-->
+<view class="title">农产品详情页</view>
+<view class="guide">名称</view>
+<view class="iinput">{{name}}</view>
+<view class="guide">状态</view>
+<view class="iinput">{{state}}</view>
+<view class="guide">个数（个）/重量（kg）</view>
+<view class="iinput">{{num}}</view>
+<view class="guide">记录时间</view>
+<view class="iinput">{{date}}</view>
+<button bindtap="commit" type="primary">删除</button>

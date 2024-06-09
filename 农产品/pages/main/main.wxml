@@ -1,0 +1,42 @@
+<!--pages/main/main.wxml-->
+<!--增加功能：两个Input控件接受农产品名称和个数/重量，对于农产品的状态用下拉选择框实现，提供成熟、未成熟、死亡三种状态-->
+<input bindinput="getname" value="{{inputName}}" placeholder="请输入农产品名称"/>
+<input bindinput="getnum" placeholder="请输入个数（个）或重量（千克）" />
+<view class='select_box'>
+    <view class='select' catchtap='selectTap'>
+        <text class='select_text'>{{selectData[index]}}</text>
+        <image class='select_img {{selectShow&&"select_img_rotate"}}' src='/pages/images/三角形_o.png'  background-size="contain"></image> 
+    </view>
+    <view class='option_box' style='height:{{selectShow?(selectData.length>5?325:selectData.length*50):0}}rpx;'>
+        <text class='option' wx:for='{{selectData}}' wx:key='this' data-index='{{index}}' catchtap='optionTap'>{{item}}</text>
+    </view>
+</view>
+<button bindtap="commit" type="primary">提交</button>
+<button bindtap="commit2" type="primary">今天已施肥</button>
+<block >
+<view class="weathertitleT">您上一次的施肥时间是：</view>
+<view class="weathertitle" >{{theshow?productdate:'请登录/注册使用完整功能'}}</view>
+</block>
+<view class="weathertitleT">近三天天气预报</view>
+<block wx:if="{{!theshow}}" >
+  <view class="weathertitle">请登录/注册</view>
+</block>
+<block wx:if="{{theshow}}">
+<ul class="my-list" >
+  <li >
+  <view >{{weather[0].date}}</view>
+          <view>{{weather[0].type}}</view>
+          <view>{{weather[0].low}}-{{weather[0].high}}</view>
+        </li>
+        <li class="li2">
+  <view >{{weather[1].date}}</view>
+          <view>{{weather[1].type}}</view>
+          <view>{{weather[1].low}}-{{weather[1].high}}</view>
+        </li>
+        <li >
+  <view >{{weather[2].date}}</view>
+          <view>{{weather[2].type}}</view>
+          <view>{{weather[0].low}}-{{weather[2].high}}</view>
+        </li>
+    </ul>
+  </block>

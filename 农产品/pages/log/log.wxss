@@ -1,0 +1,15 @@
+/* pages/log/log.wxss */
+input{
+  margin: 70px auto;
+  display: flex;
+  border: 1px black solid;
+  border-radius: 5px;
+  height: 40px;
+  padding-left: 10px;
+  width: 250px;
+}
+button{
+  width: 150px;
+  height: 40px;
+  margin: 30px auto;
+}

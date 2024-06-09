@@ -1,0 +1,40 @@
+<!--pages/mine/mine.wxml-->
+<!--用户信息界面，通过show的值判断当前登录状态-->
+<!-- 顶部状态栏 -->
+<view class="top-bg"></view>
+<view class="box">
+  <!-- 头像 -->
+  <view class="head-box">
+    <button open-type="chooseAvatar" class="avatar" bindchooseavatar="chooseAvatar">
+      <image class="head-img" src="{{login.avatar}}" mode="widthFix"></image>
+    </button>
+    <view class="tip">{{login.show?'欢迎使用':'当前未登录，请登录！'}}</view>
+  </view>
+  
+  <!-- 第一部分列表 -->
+  <view class="row">
+  <view class="text">姓名：</view>
+  <view class="text">{{login.show?login.username:'当前未登录，请登录！'}}</view>
+  <view class="text">农田地址：</view>
+  <view class="text">{{login.show?login.userlocal:'当前未登录，请登录！'}}</view>
+  </view>
+</view>
+
+<!-- 第二部分列表 -->
+<!--已登录状态就提供退出登录按钮-->
+<view class="end">
+  <view hidden="{{!login.show}}">
+  <button  bindtap="exitClick" class="row" style="width: 100%;border-bottom: none;">
+    退出登录
+  </button>
+</view>
+<!--未登录状态就提供立即登录按钮-->
+<view hidden="{{login.show}}">
+  <button class="row" bindtap="loglog" style="width: 100%;border-bottom: none;"  >
+    立即登录
+  </button>
+</view>
+</view>
+<view class="footer">
+  <text>©农产品小程序个人中心</text>
+</view>
